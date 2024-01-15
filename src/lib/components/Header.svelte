@@ -2,6 +2,7 @@
     import { Sun, Moon } from "radix-icons-svelte";
     import { toggleMode } from "mode-watcher";
     import { Button } from "./ui/button";
+    import { Logo } from "$lib";
 </script>
 
 <header
@@ -10,6 +11,9 @@
     <div class="container flex h-14 max-w-screen-2xl items-center">
         <div class="mr-4 hidden md:flex">
             <a href="/" class="mr-6 flex items-center space-x-2">
+                <div class="logo">
+                    <Logo></Logo>
+                </div>
                 <span class="hidden font-bold sm:inline-block">Neverminder</span
                 ></a
             >
