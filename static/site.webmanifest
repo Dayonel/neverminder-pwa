@@ -15,5 +15,23 @@
     ],
     "theme_color": "#ffffff",
     "background_color": "#ffffff",
-    "display": "standalone"
+    "display": "standalone",
+    "screenshots": [
+        {
+            "src": "screenshot-wide.png",
+            "sizes": "640x392",
+            "type": "image/png",
+            "form_factor": "wide",
+            "label": "Neverminder screenshot"
+        },
+        {
+            "src": "screenshot-narrow.png",
+            "sizes": "377x817",
+            "type": "image/png",
+            "form_factor": "narrow",
+            "label": "Neverminder screenshot"
+        }
+    ],
+    "start_url": "/",
+    "description": "Reminders app that sends notifications for your plans."
 }
