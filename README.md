@@ -2,6 +2,15 @@
 
 Find below the necessary configuration to run this project.
 
+## Run the project
+```bash
+npm run dev
+```
+
+>  ➜  Local:   https://localhost:5173/
+➜  Network: https://192.168.178.129:5173/
+➜  press h + enter to show help
+
 ## Configure over https for local IP(s)
 
 You will need `Chocolatey` in windows
@@ -20,7 +29,7 @@ ipconfig
 ```
 
 > in my case
-> Dirección IPv4. . . . . . . . . . . . . . : 192.168.178.129
+Dirección IPv4. . . . . . . . . . . . . . : 192.168.178.129
 
 ## Install mkcert
 
@@ -51,21 +60,36 @@ C:\Users\dayon\AppData\Local\mkcert
 Copy the file `rootCA.pem`
 Paste the file in project `static` folder.
 
-## Run the project
+## Restart the project
 ```bash
+Ctrl + C
 npm run dev
 ```
 
-Navigate to the url in your browser (replace for your local IP):
->  ➜  Local:   https://localhost:5173/
->  ➜  Network: https://192.168.178.129:5173/
->  ➜  press h + enter to show help
+## Download certificate (iOS):
+> Navigate to: https://192.168.178.129:5173/rootCA.pem
 
-## Install trusted certificate in IOS
+## Install trusted certificate (iOS)
 > In iOS open: Settings -> Profile Downloaded
-> Tap Install (use your iPhone password)
-> Now open: Settings -> General -> About -> Certificate Trust Settings -> Enable radio button for your downloaded certificate.
+Tap Install (use your iPhone password)
+Now open: Settings -> General -> About -> Certificate Trust Settings -> Enable radio button for your downloaded certificate.
 
-## Navigate to the https URL
+## or
+---
+
+## Download certificate (Android):
+> Navigate to: https://192.168.178.129:5173/rootCA.pem
+Click 3 dots and save the certificate (see image below)
+[![Save Android Certificate](https://i.imgur.com/6CIXeY4.png)](https://i.imgur.com/6CIXeY4.png)
+(option 2) download it from here: https://github.com/Dayonel/neverminder-pwa/blob/25dc74d8a4e2cdc79b98089c71bbcaca9e67a4e8/rootCA.pem
+
+## Install trusted certificate (Android)
+> Open settings.
+Go to 'Privacy'
+Go to 'Install from SD card'
+Select 'rootCA.pem'
+Add any name to the certificate
+
+## Done! Navigate to the https URL
 > Use your local IP for both developing in desktop & testing in mobile:
 > Network: https://192.168.178.129:5173

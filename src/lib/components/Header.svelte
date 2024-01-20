@@ -10,7 +10,7 @@
 >
     <div class="container flex justify-between h-14 max-w-screen-2xl items-center">
         <div class="mr-4">
-            <a href="/" class="mr-6 flex items-center space-x-2">
+            <a href="/" class="mr-6 flex items-center space-x-2" aria-label="Go to home page.">
                 <div class="logo">
                     <Logo></Logo>
                 </div>

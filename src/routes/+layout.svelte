@@ -6,6 +6,7 @@
     import { dev } from "$app/environment";
     import { sw } from "../store";
     import { Toaster } from "$lib/components/ui/sonner";
+    import { onMount } from "svelte";
 
     let supported = false;
     const versionMessage =
@@ -37,6 +38,16 @@
         return false;
     };
 </script>
+
+<svelte:head>
+    <script>
+        // this fires too early
+        window.addEventListener("beforeinstallprompt", (e) => {
+            e.preventDefault();
+            window.deferredPrompt = e; // global var
+        });
+    </script>
+</svelte:head>
 
 <ModeWatcher />
 <main class="grid grid-rows-[56px,1fr] h-dvh">
