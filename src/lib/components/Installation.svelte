@@ -43,7 +43,7 @@
     };
 </script>
 
-<div class="md:w-[400px] m-auto">
+<div class="flex justify-center md:w-[400px] m-auto">
     {#if mobile && !pwaInstalled}
         <div class="flex flex-col align-center p-6">
             <p class="uppercase text-center text-sm">
