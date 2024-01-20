@@ -19,15 +19,12 @@
     let notificationsEnabled: boolean;
     let checked = false;
     $: checked, allow();
-    let deferredPrompt: any; // if this is null, PWA is installed
-    // @ts-ignore
-    $: window && window.deferredPrompt,
-        // @ts-ignore
-        (deferredPrompt = window.deferredPrompt);
 
     onMount(async () => {
-        isPWA = window.matchMedia("(display-mode: standalone)").matches;
-        pwaInstalled = !deferredPrompt;
+        isPWA =
+            // @ts-ignore
+            window.navigator.standalone ||
+            window.matchMedia("(display-mode: standalone)").matches;
 
         notificationsEnabled = Notification.permission === "granted";
     });
@@ -46,16 +43,18 @@
         });
     };
 
-    const checkDeferredPrompt = () => {
-        if (!window) return;
-    };
-
     const installPWA = async () => {
         // @ts-ignore
-        deferredPrompt = window.deferredPrompt; // global var
-        deferredPrompt.prompt();
-        const { outcome } = await deferredPrompt.userChoice;
-        deferredPrompt = null;
+        if (!window.deferredPrompt) {
+            pwaInstalled = true;
+            return;
+        }
+        // @ts-ignore
+        window.deferredPrompt.prompt(); // global var
+        // @ts-ignore
+        const { outcome } = await window.deferredPrompt.userChoice;
+        // @ts-ignore
+        window.deferredPrompt = null;
         if (outcome === "accepted") {
             pwaInstalled = true;
         }
