@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { Sun, Moon } from "radix-icons-svelte";
+    import { Sun, Moon } from "lucide-svelte";
     import { toggleMode } from "mode-watcher";
     import { Button } from "./ui/button";
     import { Logo } from "$lib";

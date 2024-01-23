@@ -1,7 +1,7 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import { Separator } from "./ui/separator";
-    import { Bell, PaperPlane, Download } from "radix-icons-svelte";
+    import { Bell, Send, Download } from "lucide-svelte";
     import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
     import { Switch } from "./ui/switch";
     import { Button } from "./ui/button";
@@ -176,7 +176,7 @@
     {:else}
         <!-- Ready -->
         <Button class="gap-1" on:click={send} variant="outline">
-            <PaperPlane></PaperPlane>
+            <Send></Send>
             <span>Send notification</span>
         </Button>
     {/if}
